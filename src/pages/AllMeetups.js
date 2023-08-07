@@ -1,21 +1,24 @@
-const dummy_data = [
+import MeetupList from "../components/meetups/MeetupList";
+
+const DUMMY_DATA = [
   {
-    id: 'm1',
-    title: 'This is a first meetup',
+    id: "m1",
+    title: "This is a first meetup",
     image:
-      'https://images.unsplash.com/photo-1626066496359-8a1a2b4e5c9e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVldHVwc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
-    address: 'Meetupstreet 5, 12345 Meetup City',
+      "https://media.npr.org/assets/img/2013/03/21/liturgy_wide-b0db450374d1862cacfb1fd49a54360db58aaefc.jpg",
+
+    address: "Meetupstreet 5, 12345 Meetup City",
     description:
-      'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
+      "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
   },
   {
-    id: 'm2',
-    title: 'This is a second meetup',
+    id: "m2",
+    title: "This is a second meetup",
     image:
-      'https://images.unsplash.com/photo-1626066496359-8a1a2b4e5c9e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVldHVwc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
-    address: 'Meetupstreet 5, 12345 Meetup City',
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Burnout_ops_on_Mangum_Fire_McCall_Smokejumpers.jpg/300px-Burnout_ops_on_Mangum_Fire_McCall_Smokejumpers.jpg",
+    address: "Meetupstreet 5, 12345 Meetup City",
     description:
-      'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
+      "This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!",
   },
 ];
 
@@ -23,12 +26,7 @@ function AllMeetupsPage() {
   return (
     <section>
       <h1>All Meetups</h1>
-      <ul>
-        {dummy_data.map((meetup) => {
-          return <li key={meetup.id}>{meetup.title}</li>
-        })}
-
-      </ul>
+      <MeetupList meetups={DUMMY_DATA} />
     </section>
   );
 }
