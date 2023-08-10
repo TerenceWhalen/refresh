@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Card from "../ui/Card";
 import classes from "./NewMeetupForm.module.css";
 
-function NewMeetupForm() {
+function NewMeetupForm(props) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
@@ -22,7 +22,7 @@ function NewMeetupForm() {
       address: enteredAddress,
       description: enteredDescription,
     };
-    console.log(meetupData);
+    props.onAddMeetup(meetupData);
   }
   return (
     <Card>
@@ -33,10 +33,10 @@ function NewMeetupForm() {
         </div>
         <div className={classes.control}>
           <label htmlForm="image">Meetup Image ref</label>
-          <input type="url" required id="title" ref={imageInputRef} />
+          <input type="url" required id="image" ref={imageInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlForm="address">Meetup Title</label>
+          <label htmlForm="address">Meetup Address</label>
           <input type="text" required id="address" ref={addressInputRef} />
         </div>
         <div className={classes.control}>
